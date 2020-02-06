@@ -1,0 +1,31 @@
+<br/><br/>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-9"><h3>Atms</h3></div>
+
+  <table class="table table-hover">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Prefecture</th>
+          <th scope="col">Geolocation (Long - Lat)</th>
+          <th scope="col">Address</th>
+          <th scope="col">Postal Code</th>
+          <th scope="col">Code</th>
+          <th scope="col">WorkingHours</th>
+        </tr>
+    </thead>
+        <tr *ngFor="let atm of atms.POPs let i=index;">
+          <th scope="row">{{i+1}}</th>
+          <td>{{atm.Name}}</td>
+          <td>{{atm.Prefecture}}</td>
+          <td>{{atm.Longitude}},{{atm.Latitude}}</td>
+          <td>{{atm.Address}}</td>
+          <td>{{atm.PostalCode}}</td>
+          <td>{{atm.Code}}</td>
+          <td>{{atm.WorkingHours}}</td>
+          
+  </table>
+  </div>

@@ -1,0 +1,18 @@
+peiraios:
+  api:
+    base-url: "https://api.rapidlink.piraeusbank.gr/piraeusbank/production/"
+    oauth: "oauth/oauth2/token"
+    account: "/v1.1/assets/accounts/"
+    cards: "/v1.1/assets/cards/"
+    account-details-url: "/details"
+    iban-url: "/info"
+  application:
+    client-id: "767d2ca0-0319-4e02-87cc-ff235db10926"
+    client-secret: "sA0wA7mM8fG8tA8oF1oS0gF0tM1bC2nJ4jA3pQ5yO2lC7rN2yV"
+eurobank:
+  api:
+    base-url: "https://apigw.eurobank.gr/eurobank/apis/v1/"
+    accounts-url: "accounts"
+  application:
+    request-id: "82e962ed-c644-4570-b570-83749b8f69bc"
+    ibm-id: "499291d76f2556043a6f82888806adb4"

@@ -1,0 +1,29 @@
+<br/><br/>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12"><h3>Accounts</h3></div>
+  </div>
+  <table class="table table-hover w-auto">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Alias</th>
+          <th scope="col">Bank</th>
+          <th scope="col">Currency</th>
+          <th scope="col">Accounting Balance</th>
+
+
+        </tr>
+    </thead>
+        <tr *ngFor="let account of bankAccounts let i=index;">
+          <th scope="row">{{i+1}}</th>
+          <td>{{account.assetAlias}}</td>
+          <td [ngStyle]="{'color': account.bank == 'PEIRAIOS'? '#f4bc42' : '#0047b3'}"><b>{{account.bank}}</b></td>
+          <td>{{account.currency}}</td>
+          <td>{{account.balance}}</td>
+          <td><a [routerLink]="['/accounts', account.accountId]" > Check </a></td>
+
+          </tr>
+  </table>
+  </div>

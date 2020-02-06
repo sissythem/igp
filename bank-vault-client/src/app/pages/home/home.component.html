@@ -1,0 +1,66 @@
+<br /><br />
+<div class="container">
+  <div class="row ">
+  </div>
+  <div class="row border-between">
+    <div class="col-6">
+
+      <div *ngIf="isLoggedIn; else elseBlockNoAccounts">
+
+        <h4>Total:   <b>{{total | currency:'EUR':'symbol':'1.2-2' }}</b></h4>
+
+        <br />
+        <h4>Account Breakdown</h4>
+
+        <div class="chart">
+          <canvas id="myChart">{{ chart }}</canvas>
+
+        </div>
+
+      </div>
+      <ng-template #elseBlockNoAccounts>
+        <br /><br />
+        <p>Login to see your Balances in Peiraios and Eurobank.</p>
+      </ng-template>
+    </div>
+    <div class="col-2">
+    </div>
+
+    <div class="col-2">
+
+      <div class="row align-items-center">
+
+        <div class="col text-center">
+          <br>
+          <div *ngIf="isLoggedIn; else elseBlock">
+            <p>Connected Banks</p>
+            <ul>
+              <li class="text-left">
+                <b>Peiraios</b>
+              </li>
+              <li class="text-left">
+                <b>Eurobank (Work in progress)</b>
+              </li>
+            </ul>
+            <div class="col">
+              <iframe
+                      allow="microphone;"
+                      width="350"
+                      height="430"
+                      src="https://console.dialogflow.com/api-client/demo/embedded/OpenBank">
+              </iframe>
+
+            </div>
+          </div>
+
+          <ng-template #elseBlock>
+            <a
+              href="https://sandbox.rapidlink.piraeusbank.gr/WinbankLogin/sb/Identity.aspx?original-url=https%3A%2F%2Fapi.rapidlink.piraeusbank.gr%2Fpiraeusbank%2Fproduction%2Foauth%2Foauth2%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3D767d2ca0-0319-4e02-87cc-ff235db10926%26redirect_uri%3Dhttp%3A%2F%2Flocalhost%3A4200%2Fauth%26scope%3D%2Fsandboxapi%26rstate%3Drb4Pe79AO9gF6mdbBIxyftdMr5rQycsOotMmx4AcPkI&app-name=ArisApp&appid=5c8231e50cf22179feab13a9&org=aris-panagiotopoulos&orgid=5c82317b0cf22179feab139d&provider=piraeusbank&providerid=58e7aa940cf23368d8a37aad&catalog=production&catalogid=597efc9c0cf23368d8a4148c&g-transid=52293827">
+              <button type="button" class="btn btn-success">Login</button>
+            </a>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

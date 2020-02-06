@@ -1,0 +1,23 @@
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>
+    <fa name="bank" style="size:20px"></fa>    Banking App
+  </h1>
+  <br/>
+  <em><h4>your online bank with one click...</h4></em>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" routerLinkActive="active" routerLink="/home">Dashboard</a>
+  <!-- <a class="navbar-brand" href="/accounts">Accounts</a> -->
+  <a *ngIf="isLoggedIn" class="navbar-brand" routerLinkActive="active" routerLink="/accounts">Accounts</a>
+  <!-- <a class="navbar-brand" href="/atms">Atms</a> -->
+  <!-- <a class="navbar-brand"  routerLinkActive="active" routerLink="/atms_be">Atms</a> -->
+
+  <!-- <a class="navbar-brand" routerLinkActive="active" routerLink="/voice"> -->
+    <!-- <fa name="microphone"> -->
+
+    <!-- </fa> -->
+  <!-- </a> -->
+  <div *ngIf="isLoggedIn" class="ml-auto mr-1">
+    <button type="button" class="btn btn-info btn-sm" (click)="clearLocalStorage()">Logout</button>
+  </div>
+</nav>

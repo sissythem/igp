@@ -1,0 +1,18 @@
+### IntelliJ IDEA ###
+!.idea/
+.idea/*
+!/.idea/runConfigurations/
+*.iws
+*.iml
+*.ipr
+*.log
+**/logs/*
+/src/app/**/*.js
+/src/app/**/*.map
+
+
+out/
+target/screens
+.angulardoc.json
+node_modules/
+

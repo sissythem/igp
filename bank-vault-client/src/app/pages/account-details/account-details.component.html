@@ -1,0 +1,91 @@
+<br /><br />
+<div class="container">
+
+    <h3>Account Details</h3>
+    <br /><br />
+
+    <div class="row">
+
+
+
+        <div class="col-md-4">
+            Description: <b>{{accountDetailsView.accountDetailsPayload.description}}</b>
+        </div>
+
+        <div class="col-md-2">
+            Accounting Balance:
+        </div>
+        <div class="col-md-2">
+            <h5><b>{{ accountDetailsView.accountDetailsPayload.accountingBalance | currency:'EUR':'symbol':'1.2-2' }}</b>
+            </h5>
+        </div>
+        <div class="col-md-2">
+            Debit: <b>{{ accountDetailsView.accountDetailsPayload.debit }}</b>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-md-1"
+            [ngStyle]="{'background-color': accountDetailsView.accountDetailsPayload.status == 'Ενεργό' ? '#31870C' : '#FF0000'}">
+
+        </div>
+        <div class="col-md-3">
+            Status: <b>{{accountDetailsView.accountDetailsPayload.status}}</b>
+        </div>
+
+        <div class="col-md-2">
+            Balance:
+        </div>
+        <div class="col-md-2">
+            <b>{{accountDetailsView.accountDetailsPayload.balance | currency:'EUR':'symbol':'1.2-2' }}</b>
+        </div>
+
+        <div class="col-md-2">
+
+        </div>
+
+    </div>
+
+    <br /><br />
+
+    <h4>Last Transactions</h4>
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <table class="table table-hover w-auto">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Post Date</th>
+                        <th scope="col">Value Date</th>
+                        <th scope="col">Reference</th>
+                        <th scope="col">Amount</th>
+
+                    </tr>
+                </thead>
+                <tr *ngFor="let transaction of accountDetailsView.accountDetailsTransactionsPayload let i=index;">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{transaction.transactionId}}</td>
+                    <td>{{transaction.description}}</td>
+                    <td>{{transaction.postDate | date:'medium' }}</td>
+                    <td>{{transaction.valueDate | date:'medium' }}</td>
+                    <td>{{transaction.transactionReference}}</td>
+                    <td [ngStyle]="{'color': transaction.amount > 0 ? '#31870C' : '#FF0000'}">
+                        <b>{{transaction.amount}}</b></td>
+
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+
+</div>
